@@ -8,9 +8,15 @@ AuthAssistant.prototype = {
   },
 
   setup: function () {
-
+    
+    this.controller.get('authTitle').update($L('Relego for webOS'));
+    this.controller.get('authDesc').update($L('This is a quick description of Relego'));
+    this.controller.get('authBody').update($L('Login or Create a new account'));
+    this.controller.get('userNameTitle').update($L('Username'));
+    this.controller.get('passwordTitle').update($L('Password'));
+    
     this.usernameModel = {
-      hintText: 'Username',
+      hintText: $L('Username'),
       multiline:    false,
       disabledProperty: 'disabled',
       focus: true,
@@ -18,7 +24,7 @@ AuthAssistant.prototype = {
     };
 
     this.passwordModel = {
-      hintText: 'Password',
+      hintText: $L('Password'),
       multiline:    false,
       disabledProperty: 'disabled',
       changeOnKeyPress: true
