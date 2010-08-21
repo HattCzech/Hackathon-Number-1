@@ -80,13 +80,13 @@ AppAssistant.prototype.handleCommand = function(event){
     var currentScene = stageController.activeScene();
     if(event.type == Mojo.Event.command) {
         switch(event.command) {
-			case "help":
+			case Mojo.Menu.helpCmd:
 				stageController.pushScene("help");
 				break;
         	case "about":
 				stageController.pushScene("about");
 				break;
-		case "prefs":
+			case Mojo.Menu.prefsCmd:
 				stageController.pushScene("prefs");
 				break;
 
