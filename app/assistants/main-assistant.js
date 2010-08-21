@@ -60,6 +60,11 @@ MainAssistant.prototype.cleanup = function() {
 };
 
 MainAssistant.prototype.handleCommand = function(event) {
+	if (event.type === Mojo.Event.commandEnable &&
+		(event.command === Mojo.Menu.helpCmd || event.command === Mojo.Menu.prefsCmd)) {
+		event.stopPropagation();
+	}
+	
     if (event.type === Mojo.Event.command) {
         switch (event.command) {
             case "show-unread":
@@ -106,14 +111,6 @@ MainAssistant.prototype.listTap = function(event)
 {
 	var url = event.item.url;
 	// launch read scene
-};
-
-MainAssistant.prototype.handleCommand = function(event) {
-	Mojo.Log.info("MA> handleCommand");
-	if (event.type === Mojo.Event.commandEnable &&
-		(event.command === Mojo.Menu.helpCmd || event.command === Mojo.Menu.prefsCmd)) {
-		event.stopPropagation();
-	}
 };
 
 var screenOpacity = 1;
