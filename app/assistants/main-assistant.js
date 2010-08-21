@@ -8,9 +8,7 @@ MainAssistant.prototype.setup = function()
 {
 		this.controller.window.setTimeout(this.loadDbScreen.bind(this),1500);
 		
-		this.controller.setupWidget(Mojo.Menu.appMenu, {omitDefaultItems: true}, {
-			items: [Mojo.Menu.prefsItem, Mojo.Menu.helpItem]
-		});
+		this.controller.setupWidget(Mojo.Menu.appMenu, {}, {});
 		
 		this.controller.setupWidget("article-list", {
 			itemTemplate: "main/relegoRowTemplate",
@@ -108,7 +106,15 @@ MainAssistant.prototype.listTap = function(event)
 {
 	var url = event.item.url;
 	// launch read scene
-}; 
+};
+
+MainAssistant.prototype.handleCommand = function(event) {
+	Mojo.Log.info("MA> handleCommand");
+	if (event.type === Mojo.Event.commandEnable &&
+		(event.command === Mojo.Menu.helpCmd || event.command === Mojo.Menu.prefsCmd)) {
+		event.stopPropagation();
+	}
+};
 
 var screenOpacity = 1;
 MainAssistant.prototype.loadDbScreen = function()
