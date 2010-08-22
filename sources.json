@@ -1,7 +1,11 @@
 [
+    {"source": "app/models/Relego.js"},
+    {"source": "app/models/debug.js"},
+    {"source": "libs/api.js"},
+    {"source": "libs/readitlater.js"},
     {"source": "app/assistants/app-assistant.js"},
-    {"source": "app\/models\/metrix.js"},
-    {"source": "app\/models\/asyncWrappers.js"},
+    {"source": "app/models/metrix.js"},
+    {"source": "app/models/asyncWrappers.js"},
     {
         "scenes": "main",
         "source": "app/assistants/main-assistant.js"
@@ -9,5 +13,25 @@
     {
         "scenes": "prefs",
         "source": "app/assistants/prefs-assistant.js"
+    },
+    {
+        "scenes": "textonly",
+        "source": "app/assistants/textonly-assistant.js"
+    },
+    {
+        "scenes": "auth",
+        "source": "app/assistants/auth-assistant.js"
+    },
+    {
+        "scenes": "help",
+        "source": "app/assistants/help-assistant.js"
+    },
+    {
+        "scenes": "helpdetails",
+        "source": "app/assistants/helpdetails-assistant.js"
+    },
+    {
+        "scenes": "splash",
+        "source": "app/assistants/splash-assistant.js"
     }
 ]
